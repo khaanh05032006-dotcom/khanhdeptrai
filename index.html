@@ -3,16 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KHÁNH_ĐZ</title>
-    
+    <title>TUẤT</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="https://khanh202516818.wordpress.com/dien-tu-cho-cntt/"><b>ĐT CNTT</b></a><br/><hr>
-    <a href="https://khanh202516818.wordpress.com/xu-li-tin-hieu/"><b>XỬ LÍ TÍN HIỆU</b></a><br/><hr>
-    <a href="https://khanh202516818.wordpress.com/xac-xuat-thong-ke/"><b>XÁC XUẤT THỐNG KÊ</b></a><br/><hr>
-    <a href="https://khanh202516818.wordpress.com/nguyen-li-he-dieu-hanh/"><b>NGUYÊN LÍ HỆ ĐIỀU HÀNH</b></a><br/><hr>
-    <a href="https://khanh202516818.wordpress.com/tinh-toan-khoa-hoc/"><b>TÍNH TOÁN KHOA HỌC</b></a><br/><hr>
-    <a href="tel:0325353530">SĐT:0325353530</a><br/><hr>
-    <a href="mailto:k0325353530@gmail.com">gmail:k0325353530@gmail.com</a><br/><hr>
+
+    <div class="container">
+        <h1>KHÁNH ĐẸP TRAI</h1>
+        <p class="subtitle">CHÀO TUẤT NHÉ</p>
+
+        <!-- Phần 1: Thêm môn học và lớp nhiều buổi -->
+        <div class="card">
+            <h3>INPUT</h3>
+            <form id="subjectForm">
+                <div class="form-row-main">
+                    <input type="text" id="subName" placeholder="Tên môn (VD: 63636)" required>
+                    <input type="text" id="classId" placeholder="Mã lớp (VD: 36363)" required>
+                </div>
+
+                <div class="sessions-section">
+                    <label><strong>Lịch các buổi học trong tuần của lớp:</strong></label>
+                    <div id="sessionRowsContainer">
+                        <!-- Các dòng buổi học sẽ được thêm vào đây bằng JS -->
+                    </div>
+                    <button type="button" id="btnAddSessionRow" class="btn-secondary">+ Thêm buổi học</button>
+                </div>
+
+                <button type="submit" class="btn-primary"> Thêm lớp học phần này</button>
+            </form>
+            <div id="subjectList" class="subject-list"></div>
+        </div>
+
+        <!-- Phần 2: Cài đặt điều kiện "Né" -->
+        <div class="card">
+            <h3>filter </h3>
+            <div class="filters">
+                <label><input type="checkbox" id="avoidWeekend"> Né Thứ 7</label>
+                <label><input type="checkbox" id="avoidPeriod1"> Né Tiết 1</label>
+                <label><input type="checkbox" id="avoidPeriod12"> Né Tiết 11, 12 (Nghỉ chiều/tối)</label>
+            </div>
+            <button id="btnGenerate" class="btn-success">OUT PUT</button>
+        </div>
+
+        <!-- Phần 3: Kết quả hiển thị các phương án lịch -->
+        <div class="card">
+            <h3>RESULT</h3>
+            <div id="resultContainer">
+                <p class="placeholder-text">error</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
